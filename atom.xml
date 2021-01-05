@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://luoliang.top</id>
+    <id>https://blog.luoliang.top</id>
     <title>韦少</title>
-    <updated>2021-01-05T07:02:29.594Z</updated>
+    <updated>2021-01-05T07:39:55.127Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://luoliang.top"/>
-    <link rel="self" href="https://luoliang.top/atom.xml"/>
+    <link rel="alternate" href="https://blog.luoliang.top"/>
+    <link rel="self" href="https://blog.luoliang.top/atom.xml"/>
     <subtitle>种树最好的时间是十年前，其次是现在</subtitle>
-    <logo>https://luoliang.top/images/avatar.png</logo>
-    <icon>https://luoliang.top/favicon.ico</icon>
+    <logo>https://blog.luoliang.top/images/avatar.png</logo>
+    <icon>https://blog.luoliang.top/favicon.ico</icon>
     <rights>All rights reserved 2021, 韦少</rights>
     <entry>
         <title type="html"><![CDATA[递归-算法的灵魂]]></title>
-        <id>https://luoliang.top/post/di-gui-suan-fa-de-ling-hun/</id>
-        <link href="https://luoliang.top/post/di-gui-suan-fa-de-ling-hun/">
+        <id>https://blog.luoliang.top/post/di-gui-suan-fa-de-ling-hun/</id>
+        <link href="https://blog.luoliang.top/post/di-gui-suan-fa-de-ling-hun/">
         </link>
         <updated>2020-11-24T07:19:23.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[被人怼了无数次的红黑树]]></title>
-        <id>https://luoliang.top/post/bei-ren-dui-liao-wu-shu-ci-de-hong-hei-shu/</id>
-        <link href="https://luoliang.top/post/bei-ren-dui-liao-wu-shu-ci-de-hong-hei-shu/">
+        <id>https://blog.luoliang.top/post/bei-ren-dui-liao-wu-shu-ci-de-hong-hei-shu/</id>
+        <link href="https://blog.luoliang.top/post/bei-ren-dui-liao-wu-shu-ci-de-hong-hei-shu/">
         </link>
         <updated>2020-11-24T07:18:09.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[编程的本质]]></title>
-        <id>https://luoliang.top/post/bian-cheng-de-ben-zhi/</id>
-        <link href="https://luoliang.top/post/bian-cheng-de-ben-zhi/">
+        <id>https://blog.luoliang.top/post/bian-cheng-de-ben-zhi/</id>
+        <link href="https://blog.luoliang.top/post/bian-cheng-de-ben-zhi/">
         </link>
         <updated>2020-11-24T04:32:03.000Z</updated>
     </entry>
