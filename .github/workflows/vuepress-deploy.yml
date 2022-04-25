@@ -1,7 +1,12 @@
-name: A-TO-B:CUSTOM_BRANCH
-on: [push]
+name: github pages
+
+on:
+  push:
+    branches:
+      - master  # Set a branch to deploy
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
