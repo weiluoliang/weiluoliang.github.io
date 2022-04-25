@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: vuepress-deploy
-      uses: weiluoliang/vuepress-deploy@master
+      uses: weiluoliang/weiluoliang/weiluoliang.github.io@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: weiluoliang/weiluoliang.github.io
