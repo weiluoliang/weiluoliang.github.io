@@ -1,4 +1,4 @@
-name: A TO A:GH_PAGES
+name: A-TO-B:CUSTOM_BRANCH
 on: [push]
 jobs:
   build-and-deploy:
@@ -11,7 +11,8 @@ jobs:
       uses: weiluoliang/weiluoliang.github.io@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: weiluoliang/weiluoliang.github.io-demo
-        TARGET_BRANCH: gh_page
+        TARGET_REPO: weiluoliang/weiluoliang.github.io
+        TARGET_BRANCH: gh-page
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist/
+        COMMIT_MESSAGE:  Auto deploy by the Vuepress-deploy
