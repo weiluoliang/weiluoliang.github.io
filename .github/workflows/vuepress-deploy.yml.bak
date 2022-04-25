@@ -3,17 +3,14 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - master  # Set a branch to deploy
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
+      - name: Check out repository code
+        uses: actions/checkout@v2 
       - name: Build and Deploy
         uses: weiluoliang/weiluoliang.github.io@master
         env:
