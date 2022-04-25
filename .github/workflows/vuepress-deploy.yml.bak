@@ -4,15 +4,15 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: weiluoliang/weiluoliang.github.io@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: weiluoliang/weiluoliang.github.io
-        TARGET_BRANCH: gh-page
-        BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: docs/.vuepress/dist/
-        COMMIT_MESSAGE:  Auto deploy by the Vuepress-deploy
+      - name: Build and Deploy
+        uses: weiluoliang/weiluoliang.github.io@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TARGET_REPO: weiluoliang/weiluoliang.github.io
+          TARGET_BRANCH: gh-page
+          BUILD_SCRIPT: yarn && yarn build
+          BUILD_DIR: docs/.vuepress/dist/
+          COMMIT_MESSAGE:  Auto deploy by the Vuepress-deploy
