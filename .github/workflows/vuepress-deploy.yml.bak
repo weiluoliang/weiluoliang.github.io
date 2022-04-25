@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: A TO A:GH_PAGES
 on: [push]
 jobs:
   build-and-deploy:
@@ -7,12 +7,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: vuepress-deploy
-      uses: weiluoliang/weiluoliang/weiluoliang.github.io@master
+    - name: Build and Deploy
+      uses: weiluoliang/weiluoliang.github.io@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: weiluoliang/weiluoliang.github.io
-        TARGET_BRANCH: gh-page
+        TARGET_REPO: weiluoliang/weiluoliang.github.io-demo
+        TARGET_BRANCH: gh_pages
         BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: docs/.vuepress/dist
-        CNAME: https://top.luoliang.top
+        BUILD_DIR: docs/.vuepress/dist/
