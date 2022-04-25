@@ -12,6 +12,6 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: weiluoliang/weiluoliang.github.io-demo
-        TARGET_BRANCH: gh_pages
+        TARGET_BRANCH: gh_page
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist/
