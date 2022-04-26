@@ -18,5 +18,5 @@ footer:  Copyright © 2022 luoliang
 
 ## 并发编程
 
-- [ReentrantLock](juc/ReentrantReadWriteLock)
+- [ReentrantLock](juc/ReentrantReadWriteLock.md)
 - ReentrantReadWriteLock
