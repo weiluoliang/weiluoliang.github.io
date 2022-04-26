@@ -10,4 +10,4 @@ call git commit -m 'deploy'
 
 call git push -f git@github.com:weiluoliang/weiluoliang.github.io.git master:gh-page
 
-call cd ..\..\..
+
