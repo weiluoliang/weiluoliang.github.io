@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: leon's blog
+heroText: luoliang's blog
 tagline: 种树最好的时间是十年前，其次是现在。
 bannerBg: 'https://cdn.jsdelivr.net/gh/weiluoliang/img@main/blog/wallhaven-lqllel.webp'
 ---
