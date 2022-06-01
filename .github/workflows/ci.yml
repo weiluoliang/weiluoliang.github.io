@@ -39,6 +39,7 @@ jobs:
           ARGS: "-avzr --delete"
           # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
           SOURCE: "docs/.vuepress/dist/"
+          SERVER_PORT: '27221' # SSH端口
           # 服务器域名
           REMOTE_HOST: "173.242.127.110" # 公网ip
           # 腾讯云默认用户名为root
