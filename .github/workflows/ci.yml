@@ -46,5 +46,5 @@ jobs:
           REMOTE_USER: "root"
           # 目标目录
           TARGET: "/var/www/blog"
-      # 如只提交到github pages可以使用github-pages-deploy-action，详见: https://github.com/JamesIves/github-pages-deploy-action
+      # 如只提交到github pages可以使用github-pages-deploy-action，详见: https://github.com/JamesIves/github-pages-deploy-action666
       
