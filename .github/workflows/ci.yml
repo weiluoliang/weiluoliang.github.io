@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           CODING_TOKEN: ${{ secrets.CODING_TOKEN }}
         run: npm install && npm run deploy
-     # 上传打包资源 1
+     # 上传打包资源 2
       - name: Deploy To Cloudcone
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
