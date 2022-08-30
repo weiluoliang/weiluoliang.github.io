@@ -41,7 +41,7 @@ jobs:
           SOURCE: 'dist/'
           REMOTE_HOST: ${{ env.SERVER_HOST }}
           REMOTE_USER: ${{ env.USER_NAME }}
-          TARGET: /usr/share/nginx/html # 服务器目标路径
+          TARGET: /usr/share/nginx/html # 服务器目标路径1
 
 
       
