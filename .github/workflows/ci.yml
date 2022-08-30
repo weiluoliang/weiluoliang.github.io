@@ -33,15 +33,20 @@ jobs:
           CODING_TOKEN: ${{ secrets.CODING_TOKEN }}
         run: npm install && npm run deploy
      # 上传打包资源 2
-      - name: Deploy To Cloudcone
-        uses: easingthemes/ssh-deploy@v2.1.5
+      - name: Deploy to CloudCone
+        uses: easingthemes/ssh-deploy@v2.0.7
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
-          ARGS: "-avz --delete"
-          SOURCE: "docs/.vuepress/dist"
-          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
-          REMOTE_USER: ${{ secrets.USER_NAME }}
-          TARGET: '/usr/share/nginx/html'
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }} # 私钥
+          # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
+          ARGS: "-avzr --delete"
+          # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+          SOURCE: "docs/.vuepress/dist/"
+          # 服务器域名
+          REMOTE_HOST: "198.211.24.114" # 公网ip
+          # 海外默认用户名为root
+          REMOTE_USER: "root"
+          # 目标目录
+          TARGET: "/usr/share/nginx/html"
 
 
       
