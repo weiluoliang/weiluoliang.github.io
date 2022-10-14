@@ -51,6 +51,9 @@ select  count (*)  from  dba_jobs;
 
 -- Oracle 19C 
 select * from dba_scheduler_jobs where job_action like ('%存储过程%')
+
+-- 根据表名查询关联
+select * from user_dependencies where referenced_name=upper('表名')
 ```
 
 
