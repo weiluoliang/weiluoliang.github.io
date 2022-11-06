@@ -86,7 +86,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'luoliang' // 必需
+      name: 'weiluoliang' // 必需
      // link: 'https://github.com/weiluoliang', // 可选的
     },
 

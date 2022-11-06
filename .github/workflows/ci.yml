@@ -26,10 +26,27 @@ jobs:
         uses: actions/setup-node@v1 # 作用：安装nodejs
         with:
           node-version: ${{ matrix.node-version }} # 版本
-      -  name: run deploy.sh # 步骤3
-         env: # 设置环境变量
+
+      - name: run deploy.sh # 步骤3
+        env: # 设置环境变量
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           CODING_TOKEN: ${{ secrets.CODING_TOKEN }}
-         run: npm install && npm run deploy
+        run: npm install && npm run deploy
+     # 上传打包资源 2
+#      - name: Deploy to CloudCone
+#        uses: easingthemes/ssh-deploy@v2.0.7
+#        env:
+#          SSH_PRIVATE_KEY: ${{ secrets.CLOUD_KEY }} # 私钥
+#          # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
+#          ARGS: "-avzr --delete"
+#          # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+#          SOURCE: "docs/.vuepress/dist/"
+#          # 服务器域名
+#          REMOTE_HOST: "198.211.24.114" # 公网ip
+#          # 海外默认用户名为root
+#          REMOTE_USER: "root"
+#          # 目标目录
+#          TARGET: "/usr/share/nginx/html"
+
 
       
