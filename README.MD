@@ -2,6 +2,5 @@
 
 ## 介绍
 
-
-![img.png](docs/.vuepress/public/img.png)
+我的博客，记录学习
 
