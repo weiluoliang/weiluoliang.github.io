@@ -32,14 +32,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           CODING_TOKEN: ${{ secrets.CODING_TOKEN }}
         run: npm install && npm run deploy
-      - name: 📂 Sync Files
-        uses: SamKirkland/web-deploy@v1
-        with:
-          target-server: 198.211.24.114
-          remote-user: root
-          private-ssh-key: ${{ secrets.SSH_KEY }}
-          destination-path: /usr/share/nginx/html
-          source-path: docs/.vuepress/dist
+      - name: Deploy
+          uses: easingthemes/ssh-deploy@v2.0.7
+          env:
+            SSH_PRIVATE_KEY: ${{ env.SSH_KEY }}
+            ARGS: '-avz --delete'
+            SOURCE: 'dist/'
+            REMOTE_HOST: ${{ env.SERVER_HOST }}
+            REMOTE_USER: ${{ env.USER_NAME }}
+            TARGET: /usr/share/nginx/html # 服务器目标路径
 
 
       
