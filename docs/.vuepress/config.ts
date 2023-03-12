@@ -86,7 +86,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'luoliang' // 必需
+      name: 'LUO LIANG' // 必需
      // link: 'https://github.com/weiluoliang', // 可选的
     },
 
@@ -94,7 +94,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     blogger: {
       avatar: 'img/20220426173025.jpg',
       name: 'luoliang',
-      slogan: 'Java工程师',
+      slogan: '吾生也有涯，知也无涯',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
