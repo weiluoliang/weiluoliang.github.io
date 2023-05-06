@@ -33,7 +33,7 @@ jobs:
           CODING_TOKEN: ${{ secrets.CODING_TOKEN }}
         run: npm install && npm run deploy
       # 直接通过脚本拉取代码到服务器
-      - name: sync blog cloudcone
-        run: curl ${{ secrets.SYNC_URL }}
+      # - name: sync blog cloudcone
+      #   run: curl ${{ secrets.SYNC_URL }}
 
       
