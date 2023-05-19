@@ -95,7 +95,7 @@ public interface $!{tableName} extends BaseMapper<$!{tableInfo.name}PO> {
 ```
 
 ### mapper.xml 模板 
-```java
+```xml
 ##引入mybatis支持
 $!{mybatisSupport.vm}
 #set($tableName = $tool.append($tableInfo.name, "PO"))
