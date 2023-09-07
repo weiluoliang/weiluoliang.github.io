@@ -19,3 +19,17 @@ Mybatis被设计出来解决我们日常操作数据库的痛点，使用最原�
 
 ## mybatis的结构
 
+mybatis主要包含以下组件：
+1. Configuration 
+2. SqlSession
+3. Executor 
+4. StatementHandler
+5. ParameterHandler
+6. ResultSetHandler
+7. TypeHandler 
+8. MapperStatement
+9. SqlSource
+10. ResultMap
+11. BoundSql 
+
+![](https://wll01.oss-cn-hongkong.aliyuncs.com/blog/01mybatis-01.png)
