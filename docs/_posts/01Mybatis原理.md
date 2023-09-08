@@ -42,3 +42,11 @@ mybatis主要包含以下组件：
 ![](https://wll01.oss-cn-hongkong.aliyuncs.com/blog/01mybatis-02.png)
 
 
+## Mybatis一级缓存 
+
+
+## Mybatis二级缓存
+
+
+## Mybatis插件 
+
