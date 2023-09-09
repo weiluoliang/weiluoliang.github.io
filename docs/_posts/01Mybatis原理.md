@@ -42,10 +42,11 @@ mybatis主要包含以下组件：
 ![](https://wll01.oss-cn-hongkong.aliyuncs.com/blog/01mybatis-02.png)
 
 
-## Mybatis一级缓存 
+## Mybatis缓存 
 一级缓存是session级别的缓存，默认是开启，**但是在spring中如果没启动事务，每次获取的session都是新的，所以一级缓存会失效，只有开启了事务才会生效。**
 
-## Mybatis二级缓存
+
+美团技术关于缓存的解读： https://tech.meituan.com/2018/01/19/mybatis-cache.html
 
 
 ## Mybatis插件 
