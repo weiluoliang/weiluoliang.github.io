@@ -1,5 +1,5 @@
 ---
-title: 02-ELK日志系统安装
+title: ELK日志系统安装
 date: 2023-11-21 16:02:32
 permalink: /pages/a2eb25/
 categories:
