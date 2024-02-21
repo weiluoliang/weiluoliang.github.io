@@ -30,7 +30,7 @@ alter table 表名 add 字段名 NUMBER(1) default 0;
 comment on column 表名.字段名 is '备注';
 ```
 
-
+<!-- more -->
 
 ## JOB
 
