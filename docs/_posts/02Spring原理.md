@@ -19,7 +19,7 @@ Spring的生命周期就是从Spring 创建Bean，Bean使用，Bean销毁的整�
 
 ### Bean的创建过程
 
-![](https://www.luoliang.top/images/spring-01.jpg)
+![](https://images.luoliang.top/spring-01.jpg)
 
 ## Spring是如何解决循环依赖问题
 

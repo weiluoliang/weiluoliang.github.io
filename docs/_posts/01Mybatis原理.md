@@ -33,14 +33,14 @@ mybatis主要包含以下组件：
 10. ResultMap
 11. BoundSql 
 
-![](https://www.luoliang.top/images/01mybatis-01.png)
+![](https://images.luoliang.top/01mybatis-01.png)
 
 ## Mapper的执行过程
 
 我们操作数据库一般都是通过写一个Mapper接口，剩下的操作都交给Mybatis去做了。Mapper并没有实现类，它是如何去生成一个实例，并且访问数据进行CRUD呢？当然是生成代理对象，通过动态代理拦截的方式实现具体的逻辑。
 
 看流程图(我这里是通过MyBatis-Plus查看debug)：
-![](https://www.luoliang.top/images/01mybatis-02.png)
+![](https://images.luoliang.top/01mybatis-02.png)
 
 
 ## Mybatis缓存 
