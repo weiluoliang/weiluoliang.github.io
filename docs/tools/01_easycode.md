@@ -1,0 +1,125 @@
+---
+title: IDEA插件-代码生生成工具（EasyCode）
+date: 2024-04-02 11:24:02
+permalink: /pages/e6b718/
+categories:
+  - 工具
+tags:
+  - 
+author: 
+  name: weiluoliang
+  link: https://github.com/weiluoliang
+---
+
+IDEA安装一个叫EasyCode的工具，可以直接根据数据库表逆向生成Java代码，基本的增删改查不用你自己写，提高效率。
+如果你想，可以把页面也通过模板生成，完全可以自己定义。详细介绍请看官方GitHub：
+[EasyCode](https://github.com/makejavas/EasyCode)
+
+<!-- more -->
+
+## 自定义模板
+
+### 实体类模板
+```java
+##引入宏定义
+$!{define.vm}
+#set($tableName = $tool.append($tableInfo.name, "PO"))
+##使用宏定义设置回调（保存位置与文件后缀）
+$!callback.setFileName($tool.append($tableName, ".java"))
+$!callback.setSavePath($tool.append($tableInfo.savePath, "/entities"))
+
+##使用宏定义设置包后缀
+#setPackageSuffix("entities")
+
+##使用全局变量实现默认包导入
+$!{autoImport.vm}
+import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
+
+##使用宏定义实现类注释信息
+#tableComment("实体类")
+@Data
+@TableName("$!{tableInfo.obj.name}")
+public class $!{tableName} implements Serializable {
+    private static final long serialVersionUID = $!tool.serial();
+
+#foreach($column in $tableInfo.pkColumn)
+    #if(${column.comment})/**
+     * ${column.comment}
+     */#end
+    @TableId(value="$!column.obj.name",type = IdType.AUTO )
+    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};
+#end
+
+#foreach($column in $tableInfo.otherColumn)
+    #if(${column.comment})/**
+     * ${column.comment}
+     */#end
+    @TableField("$!column.obj.name")
+    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};
+#end
+            
+}
+
+```
+
+### Mapper接口模板
+```java
+##定义初始变量
+#set($tableName = $tool.append($tableInfo.name, "Mapper"))
+##设置回调
+$!callback.setFileName($tool.append($tableName, ".java"))
+$!callback.setSavePath($tool.append($tableInfo.savePath, "/mapper"))
+
+
+#if($tableInfo.savePackageName)package $!{tableInfo.savePackageName}.#{end}mapper;
+
+import $!{tableInfo.savePackageName}.entities.$!{tableInfo.name}PO;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+/**
+ * $!{tableInfo.comment}($!{tableInfo.name})表数据库访问层
+ *
+ * @author $!author
+ * @since $!time.currTime()
+ */
+public interface $!{tableName} extends BaseMapper<$!{tableInfo.name}PO> {
+
+
+}
+
+
+```
+
+### XML SQL文件模板
+```xml
+##引入mybatis支持
+$!{mybatisSupport.vm}
+#set($tableName = $tool.append($tableInfo.name, "PO"))
+##设置保存名称与保存位置
+$!callback.setFileName($tool.append($!{tableInfo.name}, "Mapper.xml"))
+$!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper/basic"))
+
+##拿到主键
+#if(!$tableInfo.pkColumn.isEmpty())
+    #set($pk = $tableInfo.pkColumn.get(0))
+#end
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="$!{tableInfo.savePackageName}.mapper.$!{tableInfo.name}Mapper">
+
+    <resultMap type="$!{tableInfo.savePackageName}.entities.$!{tableName}" id="$!{tableInfo.name}Map">
+#foreach($column in $tableInfo.fullColumn)
+        <result property="$!column.name" column="$!column.obj.name" jdbcType="$!column.ext.jdbcType"/>
+#end
+    </resultMap>
+
+
+</mapper>
+
+```
