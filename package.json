@@ -1,5 +1,5 @@
 {
-  "name": "theme-vdoing-blog",
+  "name": "luoliang-blog",
   "version": "1.0.0",
   "scripts": {
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
