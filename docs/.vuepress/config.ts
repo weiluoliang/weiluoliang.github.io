@@ -27,6 +27,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 导航配置
     nav: [
       {
+        text: 'AI技术',
+        link: '/pages/005276/',
+      },
+      {
         text: '并发编程',
         link: '/pages/e29a38/',
       },
